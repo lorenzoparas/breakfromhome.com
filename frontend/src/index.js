@@ -6,8 +6,10 @@ import thunk from 'redux-thunk';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { reducers } from './reducers';
-import App from './App';
+import App from './App.js';
 import './index.css';
+import { SignUp } from './pages/SignUp.js';
+
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
