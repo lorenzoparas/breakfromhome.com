@@ -16,6 +16,19 @@ const postSchema = mongoose.Schema({
     }
 });
 
+// const account = mongoose.Schema({
+//     username: String,
+//     password: String,
+//     email: String,
+//     websites: [String],
+//     startTime: String,
+//     endTime: String,
+//     daysActive: [Boolean],
+//     intervalMinutes: Number
+// });
+
+
+
 const PostMessage = mongoose.model('PostMessge', postSchema);
 
 export default PostMessage;
