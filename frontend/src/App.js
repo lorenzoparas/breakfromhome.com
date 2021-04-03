@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Reminder from './pages/Reminder.js';
 import SignIn from './pages/SignUp.js';
+import SignUp from './pages/SignUp/SignUp.jsx'
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <Switch>
         <Route path='/' component={SignIn} exact/>
         <Route path='/reminder' component={Reminder}/>
+        <Route path='/signUp' component={SignUp}/>
       </Switch>
     </main>
   );
