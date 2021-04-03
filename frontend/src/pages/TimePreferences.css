@@ -1,0 +1,8 @@
+.day-box {
+    border: 2px solid black;
+    width: 60px;
+    padding: 20px;
+    display: inline-block;
+    margin-left: 0.5px;
+    margin-right: 0.5px;
+}
