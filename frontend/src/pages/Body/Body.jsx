@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from '../Home';
-import SignUp from '../SignUp';
-import Preferences from '../Preferences';
-import TimePreferences from '../TimePreferences';
-import Login from '../Login';
-import Break from '../Break';
+import Home from './pages/Home/home.jsx';
+import SignUp from './pages/SignUp/SignUp.jsx';
+import Preferences from './pages/Preferences/Preferences.jsx';
+import TimePreferences from './pages/TimePreferences/TimePreferences.jsx';
+import Login from './pages/Login/Login.jsx';
+import Break from './pages/Break.jsx';
 
 import {
     Route,

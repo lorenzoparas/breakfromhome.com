@@ -1,6 +1,5 @@
 import React from 'react';
 import TimePicker from 'react-time-picker';
-import './TimePreferences.css';
 import { Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import useStyles from './styles';
