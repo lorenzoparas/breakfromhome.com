@@ -11,8 +11,8 @@
   "author": "Nathan Baylon <nathanbaylon@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
+    "babel-node": "*",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.3",
@@ -20,6 +20,7 @@
     "semver": "^5.7.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.14",
     "@babel/node": "^7.13.13",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",

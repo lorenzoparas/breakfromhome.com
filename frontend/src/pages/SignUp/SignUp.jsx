@@ -1,25 +1,25 @@
 import { AddAlert } from '@material-ui/icons';
 import React from 'react';
-import { createUser } from '../../../../backend/controllers/users';
-
-import './SignUp.css';
-import {Link } from "react-router-dom";
+import { createUser } from '../../actions/users';
+import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
 function SignUp () {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [email, setEmail] = React.useState('');
+    const dispatch = useDispatch();
 
     const printDetails = () => {
-        console.log(username, password, email);
+        
     }
     
     const checkPassword = (pass1, pass2) => {
-        if (pass1 === pass2) {
-            return;
-        } else {
-            alert('Passwords do not match');
-        }
+        // if (pass1 === pass2) {
+        //     return;
+        // } else {
+        //     alert('Passwords do not match');
+        // }
     }
 
     const clear = () => {
@@ -30,10 +30,12 @@ function SignUp () {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(username, password, email);
         const userData = {
-            username: username,
-            password: password
+            "username": username,
+            "password": password
         }   
+        console.log("MY NAME's JEFF! 0 =", userData);
         dispatch(createUser(userData));
         clear();
     }
