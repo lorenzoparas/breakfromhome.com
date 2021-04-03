@@ -20,12 +20,12 @@ function Home () {
             </a>
         </div>
         <div>
-            <a href="/preferences"> 
+            <a href="/websitePreferences"> 
                 <button> Preferences </button>
             </a>
         </div>
         <div>
-            <a href="/time">
+            <a href="/timePreferences">
                 <button> Time </button>
             </a>
         </div>
