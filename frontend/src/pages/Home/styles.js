@@ -8,4 +8,14 @@ export default makeStyles((theme) => ({
   text: {
     color: 'white',
   },
+  // Naviation styling
+  navBar: {
+    position: 'fixed',
+  },
+  logo: {
+    
+  }, 
+  rego: {
+
+  },
 }));
