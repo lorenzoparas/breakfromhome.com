@@ -20,9 +20,6 @@ function App() {
         <Route path={['/' , "/home"]} component={Home} exact/>
         <Route path='/reminder' component={Reminder}/>
         <Route path='/signUp' component={SignUp}/>
-        <Route path='/login' component={Login}/>
-        <Route path='/timePreferences' component={TimePreferences}/>
-        <Route path='/websitePreferences' component={websitePreferences}/>
       </Switch>
     </main>
   );

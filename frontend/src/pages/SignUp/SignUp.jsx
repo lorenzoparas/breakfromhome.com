@@ -1,5 +1,9 @@
+import { AddAlert } from '@material-ui/icons';
 import React from 'react';
+import { createUser } from '../../../../backend/controllers/users';
 
+import './SignUp.css';
+import {Link } from "react-router-dom";
 
 function SignUp () {
     const [username, setUsername] = React.useState('');
@@ -8,6 +12,30 @@ function SignUp () {
 
     const printDetails = () => {
         console.log(username, password, email);
+    }
+    
+    const checkPassword = (pass1, pass2) => {
+        if (pass1 === pass2) {
+            return;
+        } else {
+            alert('Passwords do not match');
+        }
+    }
+
+    const clear = () => {
+        setUsername('');
+        setPassword('');
+        setEmail('');
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const userData = {
+            username: username,
+            password: password
+        }   
+        dispatch(createUser(userData));
+        clear();
     }
 
     return (
@@ -29,7 +57,16 @@ function SignUp () {
                         placeholder='Password' 
                         type='password'/>
             </div>
-            <button id='create-account' onClick={printDetails}>Create An Account</button>
+            <div className='signup-confirm'>
+                <input onBlur={e => checkPassword(e, password)}
+                        placeholder='Confirm Password' 
+                        type='password'/>
+            </div>
+            <div id='signup-ending'>Already have an account?</div>
+            <div id='signup-login'><Link to='/'>
+                <button id="login-page">Login</button>
+            </Link></div>
+            <button id='create-account' onClick={handleSubmit}>Create An Account</button>
         </div>
     );
 }
