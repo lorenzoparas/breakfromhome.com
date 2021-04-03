@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './Home';
-import SignUp from './SignUp';
-import Preferences from './Preferences';
-import TimePreferences from './TimePreferences';
-import Login from './Login';
-import Break from './Break';
+import Home from '../Home';
+import SignUp from '../SignUp';
+import Preferences from '../Preferences';
+import TimePreferences from '../TimePreferences';
+import Login from '../Login';
+import Break from '../Break';
 
 import {
     Route,

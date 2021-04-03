@@ -1,9 +1,8 @@
 import React from 'react';
 
-import './Preferences.css';
+import useStyles from './styles';
 
 function Preferences () {
-
     const [websiteInputs, setWebsiteInputs] = React.useState(['']);
 
     const updateWebsite = (index, value) => {
@@ -47,12 +46,14 @@ function Preferences () {
 }
 
 function WebsiteInput ( {index, setWebsite, website }) {
+    const classes = useStyles();
+
     return (
         <div>
             <input
                 type='text'
                 placeholder='Enter a URL. . .'
-                className='website-input'
+                className={classes.websiteInput}
                 onChange={e => setWebsite(index, e.target.value)}
                 value={website[index]}
             />

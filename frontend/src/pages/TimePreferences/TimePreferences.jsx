@@ -3,6 +3,7 @@ import TimePicker from 'react-time-picker';
 import './TimePreferences.css';
 import { Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import useStyles from './styles';
 
 const dayArray = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
 
@@ -74,10 +75,11 @@ function TimePreferences () {
 }
 
 function DayBox ( {visible, index, setDay} ) {
+    const classes = useStyles();
     if (visible === true) {
         return (
             <span
-                className='day-box' 
+                className='dayBox' 
                 onClick={setDay}
                 style={{backgroundColor: "red", cursor:"pointer"}}>{dayArray[index]}
             </span> 

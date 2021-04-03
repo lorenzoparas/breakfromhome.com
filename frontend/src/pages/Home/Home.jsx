@@ -1,11 +1,12 @@
 import React from 'react';
 
-import './Home.css';
+import useStyles from './styles';
 
 function Home () {
+    const classes = useStyles();
     return (
-        <div id="mainPage">
-        <div id="text">
+        <div id="mainPage" class={classes.mainPage}>
+        <div id="text" class={classes.text}>
             <h1>Scheduling website</h1>
         </div> 
         <div>

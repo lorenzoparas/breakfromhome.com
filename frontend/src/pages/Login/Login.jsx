@@ -1,5 +1,5 @@
 import React from 'react';
-import './Login.css'
+import useStyles from './styles';
 
 function Login () {
     const [username, setUsername] = React.useState('');
@@ -8,6 +8,7 @@ function Login () {
     const printDetails = () => {
         console.log(username, password);
     }
+    const classes = useStyles();
 
     return (
         <div id='login-container'>
