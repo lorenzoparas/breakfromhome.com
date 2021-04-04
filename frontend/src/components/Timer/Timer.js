@@ -65,15 +65,15 @@ class Timer extends React.Component {
     
     return (
       <Paper elevation={1} style={{ padding: "1em" }}>
-      <Time active={this.state.active} seconds={this.state.seconds} />
-      <br/>
-      <Container align="center">
-      <TimerButton action={this.playStop}>{buttonString}</TimerButton>
-      </Container>
-      <br/>
-      <Option value={this.state.workTime} timer="workTime" updateLength={this.updateLength.bind(this)}>Work Minutes</Option>
-      <br/>
-      <Option value={this.state.breakTime} timer="breakTime" updateLength={this.updateLength.bind(this)}>Break Minutes</Option>
+        <Time active={this.state.active} seconds={this.state.seconds} />
+        <br/>
+        <Container align="center">
+        <TimerButton action={this.playStop}>{buttonString}</TimerButton>
+        </Container>
+        <br/>
+        <Option value={this.state.workTime} timer="workTime" updateLength={this.updateLength.bind(this)}>Work Minutes</Option>
+        <br/>
+        <Option value={this.state.breakTime} timer="breakTime" updateLength={this.updateLength.bind(this)}>Break Minutes</Option>
       </Paper>
       )
     }

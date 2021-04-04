@@ -18,7 +18,7 @@ export default class Time extends React.Component {
       var activeTimer = this.props.active === 'workTime' ? 'Work Time' : 'Break Time';
   
       return (
-        <Container align="center">
+        <Container>
           <Typography variant="h2">{activeTimer}</Typography>
           <Typography variant="h3">{remainingTime}</Typography>
         </Container>

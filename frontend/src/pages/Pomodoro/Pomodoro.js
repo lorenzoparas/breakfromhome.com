@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Typography, Grid } from '@material-ui/core';
+import { Paper, Typography, Grid } from '@material-ui/core';
 import Timer from '../../components/Timer/Timer';
 
 const Pomodoro = () => {
@@ -12,10 +12,8 @@ const Pomodoro = () => {
 
     return (
         <Grid container align="center" justify="center" direction="column">
-            <Typography variant="h1" color="primary">Pomodoro Timer</Typography>
-            <Container>
+                <Typography variant="h1" color="primary">Pomodoro Timer</Typography>
                 <Timer/>
-            </Container>
         </Grid>
     );
 };

@@ -20,6 +20,7 @@ export default makeStyles((theme) => ({
     marginTop: theme.spacing(4),
   },
   cardGrid: {
+    padding: theme.spacing(10),
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
   },
