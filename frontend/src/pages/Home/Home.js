@@ -52,14 +52,18 @@ export default function Home() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
+                <Link href='/signUp' variant='h2'>
                   <Button variant="contained" color="primary">
                     Sign Up
                   </Button>
+                </Link>
                 </Grid>
                 <Grid item>
+                <Link href='/login' variant='h2'>
                   <Button variant="outlined" color="primary">
                     I have an account
                   </Button>
+                </Link>
                 </Grid>
               </Grid>
             </div>
