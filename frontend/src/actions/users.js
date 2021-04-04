@@ -7,6 +7,7 @@ export const createUser = (user) => async (dispatch) => {
     const { data } = await api.createUser(user);
     dispatch({ type: CREATE, payload: data });
   } catch (error) {
+    alert("Username taken!");
     console.log(error.message);
   }
 };

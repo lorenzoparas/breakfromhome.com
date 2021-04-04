@@ -13,6 +13,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+import { AddAlert } from '@material-ui/icons';
+import { createUser } from '../../actions/users';
+import { useDispatch } from 'react-redux';
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -47,7 +51,37 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
+
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [confirmPassword, setConfirmPassword] = React.useState('');
+
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const clear = () => {
+    setUsername('');
+    setPassword('');
+    setConfirmPassword('');
+  }
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+
+      if (password !== confirmPassword) {
+        alert("The two passwords don't match.");
+        return;
+      }
+
+      const userData = {
+          "username": username,
+          "password": password
+      };  
+      // console.log(userData['username']); 
+      // console.log(userData['password']); 
+      dispatch(createUser(userData));
+      clear();
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -57,7 +91,7 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign Up
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -65,10 +99,11 @@ export default function SignIn() {
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            onChange={e => setUsername(e.target.value)}
+            id="name"
+            label="Your Name"
+            name="name"
+            autoComplete="name"
             autoFocus
           />
           <TextField
@@ -76,15 +111,24 @@ export default function SignIn() {
             margin="normal"
             required
             fullWidth
+            onChange={e => setPassword(e.target.value)}
             name="password"
             label="Password"
             type="password"
             id="password"
             autoComplete="current-password"
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            onChange={e => setConfirmPassword(e.target.value)}
+            name="confirmPassword"
+            label="Confirm Password"
+            type="password"
+            id="confirmPassword"
+            autoComplete="current-password"
           />
           <Button
             type="submit"
@@ -92,23 +136,19 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleSubmit}
           >
-            Sign In
+            Sign Up
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
+        </form>
+        <Grid container>
             <Grid item>
-                {"Don't have an account?"}
-                <Link to='/signUp' variant="body2">
-                  <button id="signUp">Sign Up</button>
+                {"Already have an account?"}
+                <Link href='/login' variant="body2">
+                  <button id="signUp">Login</button>
               </Link>
             </Grid>
           </Grid>
-        </form>
       </div>
       <Box mt={8}>
         <Copyright />
