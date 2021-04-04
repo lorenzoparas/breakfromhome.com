@@ -27,4 +27,4 @@ export default class Time extends React.Component {
         </Container>
       )
     }
-  }
+}

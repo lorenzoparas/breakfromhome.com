@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Navigation from '../Navigation/Navigation';
+import Navigation from '../../components/Navigation/Navigation';
 import useStyles from './styles';
 import { updateUser, getUser } from '../../actions/users';
 import { useDispatch } from 'react-redux';
