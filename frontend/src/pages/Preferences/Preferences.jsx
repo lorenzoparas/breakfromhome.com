@@ -1,7 +1,11 @@
 import React from 'react';
 
+<<<<<<< HEAD
 
 import NavBar from '../../components/NavBarLogin/NavBarLogin';
+=======
+import Navigation from '../../components/Navigation/Navigation';
+>>>>>>> a32d5ba5d5209a2ba922353773a2c884a551139f
 import useStyles from './styles';
 import { updateUser, getUser } from '../../actions/users';
 import { useDispatch } from 'react-redux';
