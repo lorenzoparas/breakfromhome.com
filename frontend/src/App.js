@@ -20,6 +20,7 @@ function App() {
         <Route path={['/' , "/home"]} component={Home} exact/>
         <Route path='/reminder' component={Reminder}/>
         <Route path='/signUp' component={SignUp}/>
+        <Route path='/Login' component={Login}/>
       </Switch>
     </main>
   );

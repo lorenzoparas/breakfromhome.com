@@ -52,12 +52,12 @@ export default function Home() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button variant="contained" href="/signUp" color="primary">
                     Sign Up
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button variant="outlined" href="/login" color="primary">
                     I have an account
                   </Button>
                 </Grid>
