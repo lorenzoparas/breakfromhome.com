@@ -19,12 +19,12 @@ function App() {
     <main>
       <Switch>
         <Route path={['/' , "/home"]} component={Home} exact/>
-        <Route path='/pomodoro' component={Pomodoro} exact/> 
-        <Route path='/reminder' component={Reminder}/>
+        <Route path={['/pomodoro','/break']} component={Pomodoro} exact/> 
         <Route path='/login' component={Login}/>
         <Route path='/signUp' component={SignUp}/>
         <Route path='/break' component={Break}/>
         <Route path='/preferences' component={WebsitePreferences}/>
+        <Route component={Error}/>
       </Switch>
     </main>
   );

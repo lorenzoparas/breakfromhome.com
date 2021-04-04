@@ -58,9 +58,11 @@ export default function Home() {
               </Grid>
             </div>
           </Container>
+          <br/>
+          <br/>
+            <Typography align="center" variant="h2" gutterBottom>Our Developers</Typography>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
-            <Typography align="center" color="primary" variant="h2" gutterBottom>Our Developers</Typography>
           {/* End hero unit */}
           <Grid container spacing={4}>
               <Grid item xs={12} sm={6}>

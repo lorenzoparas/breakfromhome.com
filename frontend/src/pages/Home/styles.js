@@ -14,14 +14,14 @@ export default makeStyles((theme) => ({
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(8, 0, 1),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
   },
   cardGrid: {
     padding: theme.spacing(10),
-    paddingTop: theme.spacing(8),
+    paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(8),
   },
   card: {
