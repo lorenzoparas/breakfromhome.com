@@ -14,19 +14,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { getUser } from '../../actions/users';
 import { useDispatch } from 'react-redux';
+import { Paper } from '@material-ui/core';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Copyright from '../../components/Copyright/Copyright';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -86,69 +76,65 @@ export default function SignIn() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Log in
-        </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            onChange={e => setUsername(e.target.value)}
-            id="name"
-            label="Name"
-            name="name"
-            autoComplete="name"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            onChange={e => setPassword(e.target.value)}
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
+    <Paper elevation={3} className={classes.login}>
+    <div className={classes.paper}>
+      <Avatar className={classes.avatar}>
+        <LockOutlinedIcon />
+      </Avatar>
+      <Typography component="h1" variant="h5">
+        Log in
+      </Typography>
+      <form className={classes.form} action='/break'>
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          id="name"
+          label="Name"
+          name="name"
+          autoComplete="off"
+        />
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          name="password"
+          label="Password"
+          type="password"
+          id="password"
+          autoComplete="off"
+        />
+        <Link href='/break' variant="body2">
           <Button
-            type="submit"
-            fullWidth
-            onClick={handleLogin}
-            variant="contained"
-            color="primary"
-            className={classes.submit}
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={classes.submit}
           >
-            Log In
+          Log In
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
-        <Grid item>
-          {"Don't have an account?"}
-          <button id="signUp">
+        </Link>
+        
+        <Grid container>
+          <Grid item>
+            <Typography variant="body1">Don't have an account?</Typography>
             <Link href='/signUp' variant="body2">
-              Sign Up
+            <Button variant="contained" color="default" id="signUp">
+                Sign Up
+            </Button>
             </Link>
-          </button>
+          </Grid>
         </Grid>
-      </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
-    </Container>
+      </form>
+    </div>
+    <Box mt={8}>
+      <Copyright />
+    </Box>
+    <br/>
+    </Paper>
+  </Container>
   );
 }
