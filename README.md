@@ -15,4 +15,4 @@ Then start the backend folder first, followed by the frontend
 npm start
 ```
 
-Happy Hacking!
+Happy Hacking!!
