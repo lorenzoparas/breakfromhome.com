@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   avatar: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(3),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  login: {
+    padding: '0 2em',
+  }
 }));
 
 export default function SignIn() {
