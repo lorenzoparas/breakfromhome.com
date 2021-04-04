@@ -11,10 +11,10 @@ const Pomodoro = () => {
 
     return (
         <React.Fragment>
-            <Navigation align='center'/>
+            <NavBar align='center'/>
             <Grid container align="center" justify="center" direction="column" className={classes.fix}>
             <Paper elevation={1} style={{ padding: "1em" }}>
-                <Typography variant="h1">Pomodoro Timer</Typography>
+                {/* <Typography variant="h1">Pomodoro Timer</Typography> */}
                 <Timer/>
             </Paper>
             </Grid>

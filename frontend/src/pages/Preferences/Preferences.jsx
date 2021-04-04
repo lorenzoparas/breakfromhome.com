@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBarLogin/NavBarLogin';
 import useStyles from './styles';
 import { updateUser, getUser } from '../../actions/users';
 import { useDispatch } from 'react-redux';
+import { Button, Paper, TextField, Container, Typography } from '@material-ui/core';
 
 function Preferences () {
     const classes = useStyles();
@@ -47,27 +48,28 @@ function Preferences () {
     }
 
     return (
-        
-        <div id="website preferences"> 
-            <NavBar/>
-            <div className={classes.container}>
-                <h1>My Favourite Websites</h1>
-                <div>
-                    {websiteInputs.map((val, idx) => {
-                        return(
-                            <WebsiteInput
-                                index={idx}
-                                setWebsite={updateWebsite}
-                                website={websiteInputs}
-                            />
-                        );
-                    })}
+        <Container maxWidth="sm">
+            <Paper align="center" id="website preferences" className={classes.paper}> 
+                <NavBar/>
+                <div className={classes.container}>
+                    <Typography variant="h3" className={classes.title}>Create Website List</Typography>
+                    <Button fullWidth variant="contained" color="primary" onClick={addWebsite} id='add-website' className={classes.button}>Add website</Button>
+                    <Button fullWidth variant="contained" color="secondary" onClick={removeWebsite} id='remove-website' className={classes.button}>Remove website</Button>
+                    <Button fullWidth variant="contained" color="primary" onClick={saveWebsitePreferences} id='update-website' className={`${classes.button} ${classes.lastButton} ${classes.updatePreference}`}>Submit preferences</Button>
+                    <div>
+                        {websiteInputs.map((val, idx) => {
+                            return(
+                                <WebsiteInput
+                                    index={idx}
+                                    setWebsite={updateWebsite}
+                                    website={websiteInputs}
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
-                <button onClick={addWebsite} id='add-website'>Add website</button>
-                <button onClick={removeWebsite} id='remove-website'>Remove website</button>
-                <button onClick={saveWebsitePreferences} id='update-website'>Update preferences</button>
-            </div>
-        </div>
+            </Paper>
+        </Container>
     );
 }
 
@@ -75,9 +77,11 @@ function WebsiteInput ( {index, setWebsite, website }) {
     const classes = useStyles();
 
     return (
-        <div>
-            <input
+        <div align="center">
+            <TextField
+                variant="outlined"
                 type='text'
+                fullWidth
                 placeholder='Enter a URL. . .'
                 className={classes.websiteInput}
                 onChange={e => setWebsite(index, e.target.value)}
