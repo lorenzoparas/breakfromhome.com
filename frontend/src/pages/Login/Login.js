@@ -78,7 +78,8 @@ export default function SignIn() {
       if (password !== userObject['password']) {
         alert("Invalid password!");
       }
-      <Link to="/break"></Link>
+      sessionStorage.setItem('loggedInUser', JSON.stringify(res));
+      window.location.href = '/break';
     });
     clear();
   }
@@ -119,18 +120,16 @@ export default function SignIn() {
           id="password"
           autoComplete="off"
         />
-        <Link variant="body2">
-          <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          color="primary"
-          className={classes.submit}
-          onClick={handleLogin}
-          >
-          Log In
-          </Button>
-        </Link>
+        <Button
+        type="submit"
+        fullWidth
+        variant="contained"
+        color="primary"
+        className={classes.submit}
+        onClick={handleLogin}
+        >
+        Log In
+        </Button>
         <Grid container>
           <Grid item>
             <Typography variant="body1">Don't have an account?</Typography>

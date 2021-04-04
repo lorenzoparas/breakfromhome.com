@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Container } from '@material-ui/core';
+import { Typography, Container, Box } from '@material-ui/core';
 import { getUser } from '../../actions/users';
 import { useDispatch } from 'react-redux';
 
@@ -20,8 +20,7 @@ export default class Time extends React.Component {
 
   render() {
     let workTime = 'Get to studying/work! 💻';
-    let breakTime = document.createElement('span');
-    breakTime.appendChild(document.createTextNode('Break Time'));
+    let breakTime = 'Take a ';
     var remainingTime = this.convertToHhMmSs(this.props.seconds);
     var activeTimer = this.props.active === 'workTime' ? workTime : breakTime;
     let visible = this.props.active === 'workTime' ? false : true;
@@ -44,10 +43,12 @@ export default class Time extends React.Component {
 }
 
 function WebsiteLink ({ remTime, visible }) {
+
   const loggedInUserData = JSON.parse(sessionStorage.getItem('loggedInUser'));
   let username = loggedInUserData['username'];
   const dispatch = useDispatch();
   const a = dispatch(getUser(username));
+
   if (remTime === "00:00:01") {
     a.then(res => {
       let allUrls = res['favouriteWebsites'];
@@ -64,5 +65,5 @@ function WebsiteLink ({ remTime, visible }) {
       <a href={link} target="_blank" style={{display: 'none'}}>Break</a>
     );
   }
-  
+
 }

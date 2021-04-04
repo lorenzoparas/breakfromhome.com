@@ -68,8 +68,7 @@ class Timer extends React.Component {
 
     return (
       <Paper elevation={1} style={{ padding: "1em" }}>
-        <Time active={this.state.active} 
-              seconds={this.state.seconds} />
+        <Time active={this.state.active} seconds={this.state.seconds} />
         <br/>
         <Container align="center">
         <TimerButton action={this.playStop}>{buttonString}</TimerButton>

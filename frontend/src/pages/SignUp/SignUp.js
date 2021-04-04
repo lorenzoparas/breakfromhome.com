@@ -84,7 +84,7 @@ export default function SignIn() {
       };
 
       dispatch(createUser(userData));
-      
+      window.location.href = '/break';
       clear();
   }
 
@@ -149,10 +149,10 @@ export default function SignIn() {
         </form>
         <Grid container>
             <Grid item>
-              <Typography variant="body1">Don't have an account?</Typography>
+              <Typography variant="body1">Already have an account?</Typography>
               <Link href='/login' variant="body2">
               <Button variant="contained" color="default" id="signup">
-                  Sign Up
+                  Login
               </Button>
               </Link>
             </Grid>
