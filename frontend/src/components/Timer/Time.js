@@ -23,7 +23,7 @@ export default class Time extends React.Component {
       return (
         <Container>
           <Typography variant="h2">{activeTimer}</Typography>
-            <Typography variant="h3" style={{ marginTop: '0.5em' }}><span style={{ border: '1px solid grey', borderRadius: '2em', padding: '15px 15px 10px 15px'}}>{remainingTime}</span></Typography>
+          <Typography variant="h3" style={{ marginTop: '0.5em' }}><span style={{ border: '1px solid grey', borderRadius: '2em', padding: '15px 15px 10px 15px'}}>{remainingTime}</span></Typography>
         </Container>
       )
     }
