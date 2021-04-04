@@ -19,13 +19,11 @@ export default class Time extends React.Component {
   };
 
   render() {
-    let workTime = 'Get to studying/work! 💻';
+    let workTime = 'Get to work! 💻';
     let breakTime = 'Take a ';
     var remainingTime = this.convertToHhMmSs(this.props.seconds);
     var activeTimer = this.props.active === 'workTime' ? workTime : breakTime;
     let visible = this.props.active === 'workTime' ? false : true;
-
-    console.log("rem time=", remainingTime);
 
     return (
       <Container>
@@ -35,7 +33,7 @@ export default class Time extends React.Component {
             <WebsiteLink remTime={remainingTime} visible={visible}/>
           </span>
         </Typography>
-        <Typography variant="h3">{remainingTime}</Typography>
+        <Typography variant="h3" style={{ border: '1px solid grey', borderRadius:'2em', paddingTop:'10px', margin: '10px 2em 0 2em' }}>{remainingTime}</Typography>
       </Container>
     )
   };
@@ -58,11 +56,11 @@ function WebsiteLink ({ remTime, visible }) {
   
   if (visible) {
     return (
-      <a href={link} target="_blank" style={{display: 'block'}}>Break</a>
+      <a href={link} target="_blank" style={{display: 'inline'}}>break!</a>
     );
   } else {
     return (
-      <a href={link} target="_blank" style={{display: 'none'}}>Break</a>
+      <a href={link} target="_blank" style={{display: 'none'}}>break!</a>
     );
   }
 

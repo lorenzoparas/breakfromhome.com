@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Paper } from '@material-ui/core';
+import { Button, Container, Paper, Grid, Typography } from '@material-ui/core';
 import Option from './Option';
 import Time from './Time';
 import { getUser } from '../../actions/users';
@@ -68,15 +68,26 @@ class Timer extends React.Component {
 
     return (
       <Paper elevation={1} style={{ padding: "1em" }}>
-        <Time active={this.state.active} seconds={this.state.seconds} />
-        <br/>
-        <Container align="center">
-        <TimerButton action={this.playStop}>{buttonString}</TimerButton>
-        </Container>
-        <br/>
-        <Option value={this.state.workTime} timer="workTime" updateLength={this.updateLength.bind(this)}>Work Minutes</Option>
-        <br/>
-        <Option value={this.state.breakTime} timer="breakTime" updateLength={this.updateLength.bind(this)}>Break Minutes</Option>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Time active={this.state.active} seconds={this.state.seconds} />
+          </Grid>
+          <Grid item xs={12}>
+            <TimerButton action={this.playStop}>{buttonString}</TimerButton>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h6">Work Minutes:</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Option value={this.state.workTime} timer="workTime" updateLength={this.updateLength.bind(this)}/>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h6">Break Minutes:</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Option value={this.state.breakTime} timer="breakTime" updateLength={this.updateLength.bind(this)}/>
+          </Grid>
+        </Grid>
       </Paper>
       )
     }
