@@ -16,6 +16,7 @@ import { Paper } from '@material-ui/core';
 
 
 import NavBar from '../../components/NavBar/NavBar';
+import NavBarLogin from '../../components/NavBarLogin/NavBarLogin';
 import useStyles from './styles';
 
 import Copyright from '../../components/Copyright/Copyright';
@@ -24,11 +25,17 @@ const cards = [1, 2, 3, 4];
 
 export default function Home() {
   const classes = useStyles();
-
+  let navBar;
+  if (sessionStorage.getItem('loggedInUser') == null) {
+    navBar = <NavBar/>;
+  } else {
+    navBar = <NavBarLogin/>;
+  }
+  console.log(sessionStorage.getItem('loggedInUser'))
   return (
     <React.Fragment>
       <CssBaseline/>
-      <NavBar/>
+      {navBar}
       <main className={classes.mainPage}>
         {/* Hero unit */}
         <div className={classes.heroContent}>

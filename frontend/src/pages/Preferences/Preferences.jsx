@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Navigation from '../Navigation/Navigation';
+
+import NavBar from '../../components/NavBarLogin/NavBarLogin';
 import useStyles from './styles';
 import { updateUser, getUser } from '../../actions/users';
 import { useDispatch } from 'react-redux';
@@ -48,7 +49,7 @@ function Preferences () {
     return (
         
         <div id="website preferences"> 
-            <Navigation/>
+            <NavBar/>
             <div className={classes.container}>
                 <h1>My Favourite Websites</h1>
                 <div>

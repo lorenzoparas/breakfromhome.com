@@ -79,6 +79,7 @@ export default function SignIn() {
       if (password !== userObject['password']) {
         alert("Invalid password!");
       }
+      sessionStorage.setItem('loggedInUser', JSON.stringify(res));
       window.location.href = '/break';
     });
     clear();

@@ -7,7 +7,7 @@ import useStyles from '../Pomodoro/style';
 const Pomodoro = () => {
 
     const classes = useStyles();
-    
+    console.log(sessionStorage.getItem('loggedInUser'));
     return (
         <React.Fragment>
         <NavBar/>

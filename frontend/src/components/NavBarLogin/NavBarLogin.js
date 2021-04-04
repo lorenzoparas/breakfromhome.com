@@ -16,9 +16,8 @@ const NavBar = () => {
          <Typography variant="h6" color="inherit" noWrap>
            BreakFromHome
         </Typography>
-          <Button className={classes.btn} href="/" color="inherit">Home</Button>
-          <Button className={classes.btn} href="/preferences" color="inherit">Preferences</Button>
-          <Button className={classes.btn} href="/break" color="inherit">Break</Button>
+          <Button className={classes.btnPreferences} href="/preferences" color="inherit">Preferences</Button>
+          <Button className={classes.btnBreak} href="/break" color="inherit">Break</Button>
         </Toolbar>
     </AppBar>
   )
