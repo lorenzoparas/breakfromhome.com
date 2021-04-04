@@ -60,6 +60,8 @@ export default function SignIn() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log("username = ", username);
+    console.log("password = ", password);
     const a = dispatch(getUser(username));
     
     await a.then(res => {
@@ -100,6 +102,7 @@ export default function SignIn() {
           margin="normal"
           required
           fullWidth
+          onChange={e => setUsername(e.target.value)}
           id="name"
           label="Name"
           name="name"
@@ -110,6 +113,7 @@ export default function SignIn() {
           margin="normal"
           required
           fullWidth
+          onChange={e => setPassword(e.target.value)}
           name="password"
           label="Password"
           type="password"

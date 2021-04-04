@@ -14,8 +14,11 @@ export default class Time extends React.Component {
     };
   
     render() {
+      let workTime = 'Get to work! 💻'
+      let breakTime = document.createElement('div');
+      breakTime.appendChild(document.createTextNode('Break Time'));
       var remainingTime = this.convertToHhMmSs(this.props.seconds);
-      var activeTimer = this.props.active === 'workTime' ? 'Work Time' : 'Break Time';
+      var activeTimer = this.props.active === 'workTime' ? workTime : breakTime;
   
       return (
         <Container>
