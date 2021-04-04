@@ -59,7 +59,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Log in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} action='/break'>
           <TextField
             variant="outlined"
             margin="normal"
@@ -81,10 +81,6 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
           />
           <Link href='/break' variant="body2">
             <Button
