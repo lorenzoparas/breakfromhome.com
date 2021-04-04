@@ -53,13 +53,19 @@ export default function Home() {
               <Grid container spacing={2} justify="center">
                 <Grid item>
                   <Button variant="contained" href="/signUp" color="primary">
+                <Link href='/signUp' variant='h2'>
+                  <Button variant="contained" color="primary">
                     Sign Up
                   </Button>
+                </Link>
                 </Grid>
                 <Grid item>
                   <Button variant="outlined" href="/login" color="primary">
+                <Link href='/login' variant='h2'>
+                  <Button variant="outlined" color="primary">
                     I have an account
                   </Button>
+                </Link>
                 </Grid>
               </Grid>
             </div>
