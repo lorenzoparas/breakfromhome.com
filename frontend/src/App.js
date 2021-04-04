@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // NOTE: Only authorised users should only be able to see the preferences
 import Reminder from './pages/Reminder.js';
-import Home from './pages/Home/Home.jsx';
+import Home from './pages/Home/Home.js';
 import SignUp from './pages/SignUp/SignUp.jsx';
 import Login from './pages/Login/Login.jsx';
 import TimePreferences from './pages/TimePreferences/TimePreferences.jsx';
