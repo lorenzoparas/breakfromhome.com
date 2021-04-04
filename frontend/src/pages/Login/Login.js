@@ -15,7 +15,6 @@ import Container from '@material-ui/core/Container';
 import { getUser } from '../../actions/users';
 import { useDispatch } from 'react-redux';
 import { Paper } from '@material-ui/core';
-
 import Copyright from '../../components/Copyright/Copyright';
 import NavBar from '../../components/NavBar/NavBar';
 

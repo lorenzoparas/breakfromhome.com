@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, Container, Paper } from '@material-ui/core';
-
 import Option from './Option';
 import Time from './Time';
+import { getUser } from '../../actions/users';
+import { useDispatch } from 'react-redux';
 
 class Timer extends React.Component {
   constructor(props) {
@@ -59,13 +60,16 @@ class Timer extends React.Component {
     state.seconds = timer === 'workTime' ? e.target.value * 60 : state.seconds
     this.setState(state);
   }
+
   render() {
+
     const TimerButton = (props) => <Button variant="contained" color="primary" onClick={props.action}>{props.children}</Button>
     const buttonString = this.state.timerId ? 'Stop' : 'Start';
-    
+
     return (
       <Paper elevation={1} style={{ padding: "1em" }}>
-        <Time active={this.state.active} seconds={this.state.seconds} />
+        <Time active={this.state.active} 
+              seconds={this.state.seconds} />
         <br/>
         <Container align="center">
         <TimerButton action={this.playStop}>{buttonString}</TimerButton>
