@@ -17,10 +17,11 @@ import { useDispatch } from 'react-redux';
 import { Paper } from '@material-ui/core';
 
 import Copyright from '../../components/Copyright/Copyright';
+import NavBar from '../../components/NavBar/NavBar';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(16),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -78,6 +79,8 @@ export default function SignIn() {
   }
 
   return (
+    <>
+    <NavBar/>
     <Container component="main" maxWidth="xs">
     <Paper elevation={3} className={classes.login}>
     <div className={classes.paper}>
@@ -139,5 +142,6 @@ export default function SignIn() {
     <br/>
     </Paper>
   </Container>
+  </>
   );
 }
