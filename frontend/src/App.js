@@ -10,6 +10,7 @@ import Reminder from './pages/Reminder.js';
 import Home from './pages/Home/Home.js';
 import SignUp from './pages/SignUp/SignUp.js';
 import Login from './pages/Login.js';
+import Break from './pages/Break.jsx';
 import TimePreferences from './pages/TimePreferences/TimePreferences.jsx';
 import websitePreferences from './pages/Preferences/Preferences.jsx';
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/reminder' component={Reminder}/>
         <Route path='/login' component={Login}/>
         <Route path='/signUp' component={SignUp}/>
+        <Route path='/break' component={Break}/>
       </Switch>
     </main>
   );

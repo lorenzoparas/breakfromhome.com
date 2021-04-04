@@ -86,21 +86,19 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
+          <Link href='/break' variant="body2">
+            <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-          >
+            >
             Log In
-          </Button>
+            </Button>
+          </Link>
+          
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
             <Grid item>
               {"Don't have an account?"}
               <button id="signUp">
