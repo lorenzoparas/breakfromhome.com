@@ -127,12 +127,12 @@ export default function Home() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image="https://cdn.discordapp.com/attachments/827406361696403471/827474862305050625/unknown.png"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Nathan
+                      Carlos Larino
                     </Typography>
                     <Typography>
                       This is a media card. You can use this section to describe the content.
@@ -152,12 +152,12 @@ export default function Home() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image="https://media.discordapp.net/attachments/827406361696403471/827470948684660767/unknown.png"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Nathan
+                      Ives Paras
                     </Typography>
                     <Typography>
                       This is a media card. You can use this section to describe the content.
