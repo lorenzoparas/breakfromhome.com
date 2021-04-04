@@ -57,7 +57,7 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Log in
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -65,10 +65,10 @@ export default function SignIn() {
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            id="name"
+            label="Name"
+            name="name"
+            autoComplete="name"
             autoFocus
           />
           <TextField
@@ -93,7 +93,7 @@ export default function SignIn() {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            Log In
           </Button>
           <Grid container>
             <Grid item xs>
@@ -101,14 +101,16 @@ export default function SignIn() {
                 Forgot password?
               </Link>
             </Grid>
-            <Grid item>
-                {"Don't have an account?"}
-                <Link to='/signUp' variant="body2">
-                  <button id="signUp">Sign Up</button>
-              </Link>
-            </Grid>
           </Grid>
         </form>
+        <Grid item>
+          {"Don't have an account?"}
+          <button id="signUp">
+            <Link href='/signUp' variant="body2">
+              Sign Up
+            </Link>
+          </button>
+        </Grid>
       </div>
       <Box mt={8}>
         <Copyright />
