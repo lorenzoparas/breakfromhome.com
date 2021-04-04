@@ -9,7 +9,6 @@ import Home from './pages/Home/Home.js';
 import SignUp from './pages/SignUp/SignUp.js';
 import Login from './pages/Login/Login.js';
 import Break from './pages/Break';
-import TimePreferences from './pages/TimePreferences/TimePreferences.jsx';
 import WebsitePreferences from './pages/Preferences/Preferences.jsx';
 import Pomodoro from './pages/Pomodoro/Pomodoro';
 
@@ -25,7 +24,6 @@ function App() {
         <Route path='/login' component={Login}/>
         <Route path='/signUp' component={SignUp}/>
         <Route path='/break' component={Break}/>
-        <Route path='/timepreferences' component={TimePreferences}/>
         <Route path='/preferences' component={WebsitePreferences}/>
       </Switch>
     </main>

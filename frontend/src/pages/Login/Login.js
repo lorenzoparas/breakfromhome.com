@@ -60,8 +60,11 @@ export default function SignIn() {
   const handleLogin = async (e) => {
     e.preventDefault();
     const a = dispatch(getUser(username));
+    
     await a.then(res => {
+      console.log(res);
       userObject = res;
+      console.log(userObject);
 
       // case if username doesn't exist in system
       if (userObject === null || username.length === 0 || password.length === 0) {
@@ -73,6 +76,7 @@ export default function SignIn() {
       if (password !== userObject['password']) {
         alert("Invalid password!");
       }
+      <Link to="/break"></Link>
     });
     clear();
   }
@@ -109,18 +113,18 @@ export default function SignIn() {
           id="password"
           autoComplete="off"
         />
-        <Link href='/break' variant="body2">
+        <Link variant="body2">
           <Button
           type="submit"
           fullWidth
           variant="contained"
           color="primary"
           className={classes.submit}
+          onClick={handleLogin}
           >
           Log In
           </Button>
         </Link>
-        
         <Grid container>
           <Grid item>
             <Typography variant="body1">Don't have an account?</Typography>
