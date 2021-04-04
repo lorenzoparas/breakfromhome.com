@@ -85,7 +85,7 @@ export default function SignIn() {
       };
 
       dispatch(createUser(userData));
-      
+      window.location.href = '/break';
       clear();
   }
 
