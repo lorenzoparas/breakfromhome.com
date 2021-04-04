@@ -1,7 +1,6 @@
 // import './App.css';
 // import Navigation from './Navigation';
 // import Body from './Body';
-
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -21,6 +20,7 @@ function App() {
         <Route path='/reminder' component={Reminder}/>
         <Route path='/login' component={Login}/>
         <Route path='/signUp' component={SignUp}/>
+        <Route path='/websitepreferences' component={websitePreferences}/>
       </Switch>
     </main>
   );

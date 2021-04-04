@@ -4,10 +4,6 @@ import useStyles from './styles';
 function Login () {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
-
-    const printDetails = () => {
-        console.log(username, password);
-    }
     
     const classes = useStyles();
 
@@ -28,7 +24,7 @@ function Login () {
                         required
                 />
             </div>
-            <button id='login-submit' onClick={printDetails}>Login</button>
+            <button id='login-submit'>Login</button>
         </div>
     );
 }

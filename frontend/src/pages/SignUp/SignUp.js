@@ -59,26 +59,39 @@ export default function SignIn() {
   const dispatch = useDispatch();
 
   const clear = () => {
+    document.getElementById('name').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('confirmPassword').value = '';
     setUsername('');
     setPassword('');
     setConfirmPassword('');
   }
 
   const handleSubmit = async (e) => {
-      e.preventDefault();
 
+      e.preventDefault();
+      
       if (password !== confirmPassword) {
+        clear();
         alert("The two passwords don't match.");
+        return;
+      }
+
+      if (username.length === 0 || password.length === 0 || confirmPassword.length === 0) {
+        clear();
+        alert("Invalid registration details!");
         return;
       }
 
       const userData = {
           "username": username,
-          "password": password
-      };  
-      // console.log(userData['username']); 
-      // console.log(userData['password']); 
+          "password": password,
+          "favouriteWebsites": [],
+          "timePresets": []
+      };
+
       dispatch(createUser(userData));
+      
       clear();
   }
 

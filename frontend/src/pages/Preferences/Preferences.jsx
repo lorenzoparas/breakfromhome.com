@@ -1,9 +1,12 @@
 import React from 'react';
 
 import useStyles from './styles';
+import { updateUser, getUser } from '../../actions/users';
+import { useDispatch } from 'react-redux';
 
 function Preferences () {
     const [websiteInputs, setWebsiteInputs] = React.useState(['']);
+    const dispatch = useDispatch();
 
     const updateWebsite = (index, value) => {
         const newWebsiteInputs = [...websiteInputs];
@@ -23,6 +26,23 @@ function Preferences () {
         setWebsiteInputs(newWebsiteInputs);
     }
 
+    const sleep = (ms) => {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    const saveWebsitePreferences = async (e) => {
+        e.preventDefault();
+        const loggedInUserData = JSON.parse(sessionStorage.getItem('loggedInUser'));
+        const newWebsiteInputs = [...websiteInputs];
+        loggedInUserData['favouriteWebsites'] = newWebsiteInputs;
+        dispatch(updateUser(loggedInUserData['username'], loggedInUserData));
+        await sleep(1000);
+        const a = dispatch(getUser(loggedInUserData['username']));
+        await a.then(res => {
+            console.log("FINAL USER=", res);
+        });
+    }
+
     return (
         <div id='preferences-container'>
             <div id='favourite-Websites'>
@@ -40,6 +60,7 @@ function Preferences () {
                 </div>
                 <button onClick={addWebsite} id='add-website'>Add website</button>
                 <button onClick={removeWebsite} id='remove-website'>Remove website</button>
+                <button onClick={saveWebsitePreferences} id='update-website'>Update preferences</button>
             </div>
         </div>
     );

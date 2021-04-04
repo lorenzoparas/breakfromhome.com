@@ -12,7 +12,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
 import { getUser } from '../../actions/users';
 import { useDispatch } from 'react-redux';
 
@@ -53,22 +52,35 @@ export default function SignIn() {
 
   const classes = useStyles();
   const dispatch = useDispatch();
+  let userObject;
 
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const clear = () => {
-    document.getElementById('name').value = '';
+  const clear = () => {document.getElementById('name').value = '';
     document.getElementById('password').value = '';
+    
     setUsername('');
     setPassword('');
   }
 
   const handleLogin = async (e) => {
-    console.log("username =", username);
-    console.log("password =", password);
     e.preventDefault();
-    dispatch(getUser(username));
+    const a = dispatch(getUser(username));
+    await a.then(res => {
+      userObject = res;
+
+      // case if username doesn't exist in system
+      if (userObject === null || username.length === 0 || password.length === 0) {
+        alert("Invalid login details!");
+        return;
+      }
+
+      // case if password is wrong but username exists
+      if (password !== userObject['password']) {
+        alert("Invalid password!");
+      }
+    });
     clear();
   }
 
@@ -106,10 +118,6 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
           />
           <Button
             type="submit"
