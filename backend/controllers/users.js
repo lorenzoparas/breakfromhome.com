@@ -22,10 +22,25 @@ export const createUser = async (req, res) => {
     }
 }
 
-export const getPosts = async (req, res) => { 
+export const getUser = async (req, res) => {
+    const { name } = req.params;
+    console.log("HERE", name);
     try {
-        const users = await User.find();
-        res.status(200).json(users);
+        const user = await User.find({ username: name });
+        console.log("YES!=", user);
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
+export const getPost = async (req, res) => { 
+    const { id } = req.params;
+
+    try {
+        const post = await User.findById(id);
+        
+        res.status(200).json(post);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }

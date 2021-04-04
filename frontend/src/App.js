@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Reminder from './pages/Reminder.js';
 import Home from './pages/Home/Home.jsx';
 import SignUp from './pages/SignUp/SignUp.js';
-import Login from './pages/Login.js';
+import Login from './pages/Login/Login.js';
 import TimePreferences from './pages/TimePreferences/TimePreferences.jsx';
 import websitePreferences from './pages/Preferences/Preferences.jsx';
 

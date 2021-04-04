@@ -13,7 +13,9 @@ const Reminder = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
 
-  useEffect(() => { dispatch(getPosts()); }, [currentId, dispatch]);
+  useEffect(() => { 
+    dispatch(getPosts()); 
+  }, [currentId, dispatch]);
 
   return (
     <Container maxWidth="lg">

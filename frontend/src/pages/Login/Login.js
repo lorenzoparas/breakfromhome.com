@@ -13,6 +13,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+import { getUser } from '../../actions/users';
+import { useDispatch } from 'react-redux';
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -47,7 +50,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
+
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  const clear = () => {
+    document.getElementById('name').value = '';
+    document.getElementById('password').value = '';
+    setUsername('');
+    setPassword('');
+  }
+
+  const handleLogin = async (e) => {
+    console.log("username =", username);
+    console.log("password =", password);
+    e.preventDefault();
+    dispatch(getUser(username));
+    clear();
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -65,6 +88,7 @@ export default function SignIn() {
             margin="normal"
             required
             fullWidth
+            onChange={e => setUsername(e.target.value)}
             id="name"
             label="Name"
             name="name"
@@ -76,6 +100,7 @@ export default function SignIn() {
             margin="normal"
             required
             fullWidth
+            onChange={e => setPassword(e.target.value)}
             name="password"
             label="Password"
             type="password"
@@ -89,6 +114,7 @@ export default function SignIn() {
           <Button
             type="submit"
             fullWidth
+            onClick={handleLogin}
             variant="contained"
             color="primary"
             className={classes.submit}

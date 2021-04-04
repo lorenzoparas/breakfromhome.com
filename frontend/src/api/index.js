@@ -10,3 +10,4 @@ export const updatePost = (id, updatedPost) => axios.patch(`${urlPosts}/${id}`, 
 export const deletePost = (id) => axios.delete(`${urlPosts}/${id}`);
 
 export const createUser = (newUser) => axios.post(urlUsers, newUser);
+export const getUser = (username) => {axios.get(`${urlUsers}${username}`)};
