@@ -22,7 +22,11 @@ function App() {
         <Route path='/reminder' component={Reminder}/>
         <Route path='/login' component={Login}/>
         <Route path='/signUp' component={SignUp}/>
+<<<<<<< HEAD
+        <Route path='/Login' component={Login}/>
+=======
         <Route path='/break' component={Break}/>
+>>>>>>> 1ec9d58bab83c2e76f36fec13e36ffdf126092ac
       </Switch>
     </main>
   );
