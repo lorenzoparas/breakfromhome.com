@@ -14,6 +14,7 @@ const NavBar = () => {
           <Typography variant="h6" color="inherit" noWrap>
             BreakFromHome
           </Typography>
+          <a href="/login"><button>Login</button></a>
         </Toolbar>
     </AppBar>
   )
