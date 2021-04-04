@@ -39,7 +39,7 @@ export default function Home() {
     <React.Fragment>
       <CssBaseline/>
       <NavBar/>
-      <main>
+      <main className={classes.mainPage}>
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
@@ -88,14 +88,6 @@ export default function Home() {
                       Hello I am Baylon
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
                 </Card>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -113,14 +105,6 @@ export default function Home() {
                       This is a media card. You can use this section to describe the content.
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
                 </Card>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -135,17 +119,10 @@ export default function Home() {
                       Carlos Larino
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+                      I like trains and if you want to support me in liking trains, checkout my media account
+                      <a href='https://www.redbubble.com/people/Okayasart/shop'> here.</a>
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
                 </Card>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -163,20 +140,12 @@ export default function Home() {
                       This is a media card. You can use this section to describe the content.
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
                 </Card>
               </Grid>
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
+        {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
           Hackiethon2021

@@ -12,12 +12,6 @@ export default makeStyles((theme) => ({
   navBar: {
     position: 'fixed',
   },
-  logo: {
-    
-  }, 
-  rego: {
-
-  },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
@@ -43,6 +37,10 @@ export default makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
-    bottom: 0,
+  
   },
+  mainPage: {
+    marginTop: '40px',
+  },
+
 }));
