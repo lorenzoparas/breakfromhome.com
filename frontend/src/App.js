@@ -13,12 +13,14 @@ import Login from './pages/Login.js';
 import Break from './pages/Break.jsx';
 import TimePreferences from './pages/TimePreferences/TimePreferences.jsx';
 import websitePreferences from './pages/Preferences/Preferences.jsx';
+import Pomodoro from './pages/Pomodoro/Pomodoro';
 
 function App() {
   return (
     <main>
       <Switch>
-        <Route path={['/' , "/home"]} component={Home} exact/>
+        {/* <Route path={['/' , "/home"]} component={Home} exact/> */}
+        <Route path={['/' , "/home"]} component={Pomodoro} exact/> 
         <Route path='/reminder' component={Reminder}/>
         <Route path='/login' component={Login}/>
         <Route path='/signUp' component={SignUp}/>
