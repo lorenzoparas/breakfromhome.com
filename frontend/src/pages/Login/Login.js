@@ -64,9 +64,7 @@ export default function SignIn() {
     const a = dispatch(getUser(username));
     
     await a.then(res => {
-      console.log(res);
       userObject = res;
-      console.log(userObject);
 
       // case if username doesn't exist in system
       if (userObject === null || username.length === 0 || password.length === 0) {
@@ -79,7 +77,7 @@ export default function SignIn() {
         alert("Invalid password!");
       }
       sessionStorage.setItem('loggedInUser', JSON.stringify(res));
-      window.location.href = '/break';
+      window.location.href = '/';
     });
     clear();
   }
