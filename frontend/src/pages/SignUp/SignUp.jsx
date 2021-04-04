@@ -35,7 +35,6 @@ function SignUp () {
             "username": username,
             "password": password
         }   
-        console.log("MY NAME's JEFF! 0 =", userData);
         dispatch(createUser(userData));
         clear();
     }
