@@ -52,7 +52,6 @@ export default function Home() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" href="/signUp" color="primary">
                 <Link href='/signUp' variant='h2'>
                   <Button variant="contained" color="primary">
                     Sign Up
@@ -60,7 +59,6 @@ export default function Home() {
                 </Link>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" href="/login" color="primary">
                 <Link href='/login' variant='h2'>
                   <Button variant="outlined" color="primary">
                     I have an account
