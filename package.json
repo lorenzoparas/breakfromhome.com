@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./index.js",
+    "start": "node ./index.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
@@ -30,5 +30,8 @@
     "babel-loader": "^8.2.2",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }
