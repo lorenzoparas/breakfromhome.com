@@ -13,9 +13,8 @@ const Pomodoro = () => {
 
     return (
         <Container component="main" maxWidth="md">
-            <Typography variant="h1">This is a test!</Typography>
-            <Timer onClick={() => setIsPlaying(!isPlaying)} />
-            <Button variant="contained" color="primary">Start</Button>
+            <Typography variant="h1">Pomodoro Timer</Typography>
+            <Timer/>
         </Container>
     );
 };
