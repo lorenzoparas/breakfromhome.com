@@ -13,4 +13,12 @@ export default makeStyles((theme) => ({
       justifyContent: 'center',
       backgroundColor: 'transparent',
     },
+    btnLogout: {
+      position: 'absolute',
+      right: '1em',
+      alignItems: 'center',
+      verticalAlign: 'middle',
+      justifyContent: 'center',
+      backgroundColor: 'transparent',
+    },
 }));

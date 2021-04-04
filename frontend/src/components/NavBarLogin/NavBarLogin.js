@@ -3,9 +3,16 @@ import { Typography, AppBar, Toolbar, Button, IconButton, Link } from '@material
 import icon from '../../images/BitsGiggles.png';
 
 import useStyles from './styles';
+import { Redirect, useHistory } from 'react-router';
 
 const NavBar = () => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const logout = () => {
+    sessionStorage.clear();
+    history.push('/');
+  }
 
   return(
     <AppBar position="fixed">
@@ -18,6 +25,7 @@ const NavBar = () => {
         </Typography>
           <Button className={classes.btnPreferences} href="/preferences" color="inherit">Preferences</Button>
           <Button className={classes.btnBreak} href="/break" color="inherit">Break</Button>
+          <Button className={classes.btnLogout} onClick={logout} color="inherit">Logout</Button>
         </Toolbar>
     </AppBar>
   )
