@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Navigation from '../Navigation/Navigation';
 import useStyles from './styles';
 import { updateUser, getUser } from '../../actions/users';
 import { useDispatch } from 'react-redux';
 
 function Preferences () {
+    const classes = useStyles();
     const [websiteInputs, setWebsiteInputs] = React.useState(['']);
     const dispatch = useDispatch();
 
@@ -44,8 +46,10 @@ function Preferences () {
     }
 
     return (
-        <div id='preferences-container'>
-            <div id='favourite-Websites'>
+        
+        <div id="website preferences"> 
+            <Navigation/>
+            <div className={classes.container}>
                 <h1>My Favourite Websites</h1>
                 <div>
                     {websiteInputs.map((val, idx) => {

@@ -6,6 +6,7 @@ export default makeStyles((theme) => ({
     backgroundcolor: 'white',
   },
   link: {
-    marginleft: '20px',
+    margin: '1em',
+    color: '#fff'
   },
 }));
