@@ -27,7 +27,7 @@ function Login () {
                         required
                 />
             </div>
-            <button id='create-account' onClick={printDetails}>Login</button>
+            <button id='login-submit' onClick={printDetails}>Login</button>
         </div>
     );
 }
