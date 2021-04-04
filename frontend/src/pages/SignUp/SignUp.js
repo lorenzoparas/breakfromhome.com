@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { Paper } from '@material-ui/core';
 
 function Copyright() {
   return (
@@ -34,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   avatar: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(3),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
@@ -44,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  login: {
+    padding: '0 2em',
+  }
 }));
 
 export default function SignIn() {
@@ -51,7 +55,7 @@ export default function SignIn() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
+      <Paper elevation={3} className={classes.login}>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
@@ -68,8 +72,7 @@ export default function SignIn() {
             id="name"
             label="Your Name"
             name="name"
-            autoComplete="name"
-            autoFocus
+            autoComplete="off"
           />
           <TextField
             variant="outlined"
@@ -80,7 +83,7 @@ export default function SignIn() {
             label="Password"
             type="password"
             id="password"
-            autoComplete="current-password"
+            autoComplete="off"
           />
           <TextField
             variant="outlined"
@@ -91,11 +94,7 @@ export default function SignIn() {
             label="Confirm Password"
             type="password"
             id="confirmPassword"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            autoComplete="off"
           />
           <Button
           type="submit"
@@ -109,9 +108,11 @@ export default function SignIn() {
         </form>
         <Grid container>
             <Grid item>
-                {"Already have an account?"}
-                <Link href='/login' variant="body2">
-                  <button id="signUp">Login</button>
+              <Typography variant="body1">Don't have an account?</Typography>
+              <Link href='/login' variant="body2">
+              <Button variant="contained" color="default" id="signup">
+                  Sign Up
+              </Button>
               </Link>
             </Grid>
           </Grid>
@@ -119,6 +120,8 @@ export default function SignIn() {
       <Box mt={8}>
         <Copyright />
       </Box>
+      <br/>
+      </Paper>
     </Container>
   );
 }
