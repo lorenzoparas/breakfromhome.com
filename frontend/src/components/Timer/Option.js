@@ -7,7 +7,7 @@ export default class Option extends React.Component {
     }
     
     convertToMinutes (seconds) {
-      return Math.floor(seconds / 60) === 0 ? '' : Math.floor(seconds / 60) ;
+      return Math.floor(seconds/60) === 0 ? '' : Math.floor(seconds/60);
     }
     
     render() {
@@ -18,4 +18,4 @@ export default class Option extends React.Component {
         </label>
       )
     }
-}
+  }

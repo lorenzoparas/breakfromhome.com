@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography, Container } from '@material-ui/core';
 
 export default class Time extends React.Component {
     twoDigits(num) {
@@ -18,10 +18,10 @@ export default class Time extends React.Component {
       var activeTimer = this.props.active === 'workTime' ? 'Work Time' : 'Break Time';
   
       return (
-        <div>
+        <Container align="center">
           <Typography variant="h2">{activeTimer}</Typography>
           <Typography variant="h3">{remainingTime}</Typography>
-        </div>
+        </Container>
       )
     }
   }
