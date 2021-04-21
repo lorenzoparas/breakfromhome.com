@@ -6,7 +6,6 @@ import path from 'path';
 import { dirname } from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
-
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
 import db from './keys/keys.js';
