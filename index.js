@@ -10,6 +10,8 @@ import { fileURLToPath } from 'url';
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
 
+const db = require('./config/keys').mongoURI;
+
 dotenv.config();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -31,7 +33,7 @@ if(process.env.NODE_ENV === 'production') {
   });
 }
 
-const CONNECTION_URL =  process.env.MONGODB_URI;
+const CONNECTION_URL =  db || process.env.MONGODB_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
