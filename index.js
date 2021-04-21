@@ -10,7 +10,6 @@ import { fileURLToPath } from 'url';
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
 
-import db from './config/keys';
 
 dotenv.config();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -26,6 +25,7 @@ app.use('/users', userRoutes);
 
 // static
 if(process.env.NODE_ENV === 'production') {
+  import db from '../config/keys.js';
   // set static folder
   app.use(express.static('frontend/build'));
   app.get('*', (req, res) => {
