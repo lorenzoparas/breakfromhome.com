@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url';
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
 
- import db from './config/keys';
+import db from './config/keys';
 
 dotenv.config();
 const __dirname = dirname(fileURLToPath(import.meta.url));
