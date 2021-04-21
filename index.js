@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
-import db from '../config/keys.js';
+import db from './keys/keys.js';
 
 
 dotenv.config();
