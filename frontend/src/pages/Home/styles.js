@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   mainPage: {
     backgroundcolor: 'rgb(85, 39, 146)',
+    marginTop: '40px',
   },
   text: {
     color: 'white',
@@ -38,10 +39,6 @@ export default makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
-  
-  },
-  mainPage: {
-    marginTop: '40px',
-  },
 
+  },
 }));

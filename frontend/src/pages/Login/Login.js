@@ -1,10 +1,7 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -50,9 +47,10 @@ export default function SignIn() {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const clear = () => {document.getElementById('name').value = '';
+  const clear = () => {
+    document.getElementById('name').value = '';
     document.getElementById('password').value = '';
-    
+
     setUsername('');
     setPassword('');
   }
@@ -62,7 +60,7 @@ export default function SignIn() {
     console.log("username = ", username);
     console.log("password = ", password);
     const a = dispatch(getUser(username));
-    
+
     await a.then(res => {
       userObject = res;
 
@@ -84,68 +82,68 @@ export default function SignIn() {
 
   return (
     <>
-    <NavBar/>
-    <Container component="main" maxWidth="xs">
-    <Paper elevation={3} className={classes.login}>
-    <div className={classes.paper}>
-      <Avatar className={classes.avatar}>
-        <LockOutlinedIcon />
-      </Avatar>
-      <Typography component="h1" variant="h5">
-        Log in
+      <NavBar />
+      <Container component="main" maxWidth="xs">
+        <Paper elevation={3} className={classes.login}>
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Log in
       </Typography>
-      <form className={classes.form} action='/break'>
-        <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          onChange={e => setUsername(e.target.value)}
-          id="name"
-          label="Name"
-          name="name"
-          autoComplete="off"
-        />
-        <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          onChange={e => setPassword(e.target.value)}
-          name="password"
-          label="Password"
-          type="password"
-          id="password"
-          autoComplete="off"
-        />
-        <Button
-        type="submit"
-        fullWidth
-        variant="contained"
-        color="primary"
-        className={classes.submit}
-        onClick={handleLogin}
-        >
-        Log In
+            <form className={classes.form} action='/break'>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                onChange={e => setUsername(e.target.value)}
+                id="name"
+                label="Name"
+                name="name"
+                autoComplete="off"
+              />
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                onChange={e => setPassword(e.target.value)}
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="off"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+                onClick={handleLogin}
+              >
+                Log In
         </Button>
-        <Grid container>
-          <Grid item>
-            <Typography variant="body1">Don't have an account?</Typography>
-            <Link href='/signUp' variant="body2">
-            <Button variant="contained" color="default" id="signUp">
-                Sign Up
+              <Grid container>
+                <Grid item>
+                  <Typography variant="body1">Don't have an account?</Typography>
+                  <Link href='/signUp' variant="body2">
+                    <Button variant="contained" color="default" id="signUp">
+                      Sign Up
             </Button>
-            </Link>
-          </Grid>
-        </Grid>
-      </form>
-    </div>
-    <Box mt={8}>
-      <Copyright />
-    </Box>
-    <br/>
-    </Paper>
-  </Container>
-  </>
+                  </Link>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+          <Box mt={8}>
+            <Copyright />
+          </Box>
+          <br />
+        </Paper>
+      </Container>
+    </>
   );
 }

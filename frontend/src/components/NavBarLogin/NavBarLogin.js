@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, AppBar, Toolbar, Button, IconButton, Link } from '@material-ui/core/';
+import { Typography, AppBar, Toolbar, Button, IconButton } from '@material-ui/core/';
 import icon from '../../images/BitsGiggles.png';
 
 import useStyles from './styles';
@@ -12,19 +12,19 @@ const NavBar = () => {
     window.location.href = '/';
   }
 
-  return(
+  return (
     <AppBar position="fixed">
-        <Toolbar>
-         <IconButton href="/home">
-           <img src={icon} height={30} width={30}/>
-         </IconButton>
-         <Typography variant="h6" color="inherit" noWrap>
-           BreakFromHome
+      <Toolbar>
+        <IconButton href="/home">
+          <img alt="logo" src={icon} height={30} width={30} />
+        </IconButton>
+        <Typography variant="h6" color="inherit" noWrap>
+          BreakFromHome
         </Typography>
-          <Button className={classes.btnPreferences} href="/preferences" color="inherit">Preferences</Button>
-          <Button className={classes.btnBreak} href="/break" color="inherit">Break</Button>
-          <Button className={classes.btnLogout} onClick={logout} color="inherit">Logout</Button>
-        </Toolbar>
+        <Button className={classes.btnPreferences} href="/preferences" color="inherit">Preferences</Button>
+        <Button className={classes.btnBreak} href="/break" color="inherit">Break</Button>
+        <Button className={classes.btnLogout} onClick={logout} color="inherit">Logout</Button>
+      </Toolbar>
     </AppBar>
   )
 }

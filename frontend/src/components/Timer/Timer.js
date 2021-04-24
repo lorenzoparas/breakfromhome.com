@@ -1,14 +1,12 @@
 import React from 'react';
-import { Button, Container, Paper, Grid, Typography } from '@material-ui/core';
+import { Button, Paper, Grid, Typography } from '@material-ui/core';
 import Option from './Option';
 import Time from './Time';
-import { getUser } from '../../actions/users';
-import { useDispatch } from 'react-redux';
 
 class Timer extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       breakTime: 300,
       workTime: 1500,
@@ -16,17 +14,17 @@ class Timer extends React.Component {
       timerId: false,
       active: 'workTime'
     }
-    
+
     this.playStop = this.playStop.bind(this);
     this.updateTime = this.updateTime.bind(this);
   }
-  
+
   updateTime() {
-    this.setState(function(prevState, props) {
+    this.setState(function (prevState, props) {
       const currentState = Object.assign(prevState);
       const stillActive = (prevState.seconds - 1) > 0;
       const nextTimer = prevState.active === 'workTime' ? 'breakTime' : 'workTime'
-      
+
       currentState.seconds = stillActive ? currentState.seconds - 0.5 : currentState[nextTimer];
       currentState.active = stillActive ? currentState.active : nextTimer;
       if (this.timerID) {
@@ -35,10 +33,10 @@ class Timer extends React.Component {
       return currentState;
     });
   }
-  
+
   playStop() {
 
-    if(this.state.timerId) {
+    if (this.state.timerId) {
       clearInterval(this.state.timerId);
       return this.setState({
         seconds: this.state.workTime,
@@ -46,15 +44,15 @@ class Timer extends React.Component {
         active: 'workTime'
       });
     }
-    
+
     this.timerID = setInterval(() => this.updateTime(), 1000)
   }
-  
+
   updateLength(timer, e) {
     if (this.state.timerId) {
       return false;
     }
-    
+
     const state = Object.assign({}, this.state);
     state[timer] = e.target.value * 60;
     state.seconds = timer === 'workTime' ? e.target.value * 60 : state.seconds
@@ -79,19 +77,19 @@ class Timer extends React.Component {
             <Typography variant="h6">Work Minutes:</Typography>
           </Grid>
           <Grid item xs={12}>
-            <Option value={this.state.workTime} timer="workTime" updateLength={this.updateLength.bind(this)}/>
+            <Option value={this.state.workTime} timer="workTime" updateLength={this.updateLength.bind(this)} />
           </Grid>
           <Grid item xs={12}>
             <Typography variant="h6">Break Minutes:</Typography>
           </Grid>
           <Grid item xs={12}>
-            <Option value={this.state.breakTime} timer="breakTime" updateLength={this.updateLength.bind(this)}/>
+            <Option value={this.state.breakTime} timer="breakTime" updateLength={this.updateLength.bind(this)} />
           </Grid>
         </Grid>
       </Paper>
-      )
-    }
+    )
   }
-  
-  
-  export default Timer;
+}
+
+
+export default Timer;

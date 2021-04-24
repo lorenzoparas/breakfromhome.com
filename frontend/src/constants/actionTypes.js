@@ -1,6 +1,4 @@
-export const CREATE = 'CREATE';
-export const UPDATE = 'UPDATE';
+export const CREATE_USER = 'CREATE_USER';
+export const UPDATE_USER = 'UPDATE_USER';
 export const DELETE = 'DELETE';
-export const FETCH_ALL = 'FETCH_ALL';
-export const LIKE = 'LIKE';
-export const GET = 'GET';
+export const GET_USER = 'GET_USER';

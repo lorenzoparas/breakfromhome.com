@@ -1,10 +1,10 @@
-import { CREATE, GET } from '../constants/actionTypes';
+import { CREATE_USER, GET_USER } from '../constants/actionTypes';
 
-export default (users = [], action) => {
+export default function userReducer(users = [], action) {
   switch (action.type) {
-    case GET:
+    case GET_USER:
       return action.payload;
-    case CREATE:
+    case CREATE_USER:
       return [...users, action.payload];
     default:
       return users;
