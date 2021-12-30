@@ -1,4 +1,4 @@
-# hackiethon2021
+# BreakFromHome.com
 Web application for Hackiethon 2021
 
 !UPDATE! The backend database for this project is currently offline.
