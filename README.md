@@ -1,22 +1,16 @@
-# BreakFromHome.com
-Web application for Hackiethon 2021
+# breakfromhome.com
+Web application which improves your physical and mental health whilst getting work done!
 
-!UPDATE! The backend database for this project is currently offline.
+# Getting Started
 
-![image](https://user-images.githubusercontent.com/1356555/138656728-83d0bf04-82a7-4c1c-9b29-815039eba118.png)
-
-# How to run
-
-Install dependencies both frontend and backend
+Install dependencies in the frontend.
 
 ```
-npm install
+yarn install
 ```
 
-Then start the backend folder first, followed by the frontend
+Start the frontend.
 
 ```
-npm start
+yarn start
 ```
-
-Happy Hacking!!
