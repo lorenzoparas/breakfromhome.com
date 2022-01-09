@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, AppBar, Toolbar, Button, IconButton } from '@material-ui/core/';
-import icon from '../../images/BitsGiggles.png';
+import icon from '../../images/logo.png';
 
 import useStyles from './styles';
 

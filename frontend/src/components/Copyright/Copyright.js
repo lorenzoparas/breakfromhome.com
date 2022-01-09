@@ -7,7 +7,7 @@ const Copyright = () => {
         <Typography variant="body2" color="textSecondary" align="center">
           {'Copyright © '}
           <Link color="inherit" href="https://www.youtube.com/watch?v=-BOAYXbPMrQ">
-            BitsNGiggles
+            Lorenzo Paras, Nathan Baylon
           </Link>{' '}
           {new Date().getFullYear()}
           {'.'}
